@@ -1,0 +1,44 @@
+{
+  "cursos": [
+    {
+      "id": 1,
+      "titulo": "Introducción a la Programación",
+      "descripcion": "Aprende los fundamentos de la programación utilizando pseudocódigo y diagramas de flujo.",
+      "categoria": "Tecnología",
+      "capacidad_maxima": 30,
+      "instructor": "Juan Pérez"
+    },
+    {
+      "id": 2,
+      "titulo": "Diseño Gráfico Digital",
+      "descripcion": "Curso completo de diseño con herramientas como Photoshop e Illustrator.",
+      "categoria": "Arte y Diseño",
+      "capacidad_maxima": 20,
+      "instructor": "Laura Martínez"
+    },
+    {
+      "id": 3,
+      "titulo": "Marketing en Redes Sociales",
+      "descripcion": "Estrategias para aumentar tu presencia en plataformas como Instagram y Facebook.",
+      "categoria": "Negocios",
+      "capacidad_maxima": 25,
+      "instructor": "Carlos Ríos"
+    },
+    {
+      "id": 4,
+      "titulo": "Inglés Conversacional",
+      "descripcion": "Mejora tu fluidez y pronunciación con clases prácticas y dinámicas.",
+      "categoria": "Idiomas",
+      "capacidad_maxima": 15,
+      "instructor": "Emily Johnson"
+    },
+    {
+      "id": 5,
+      "titulo": "Desarrollo Web Full Stack",
+      "descripcion": "Aprende a crear aplicaciones web completas con HTML, CSS, JavaScript y Node.js.",
+      "categoria": "Tecnología",
+      "capacidad_maxima": 35,
+      "instructor": "Andrés Gómez"
+    }
+  ]
+}
