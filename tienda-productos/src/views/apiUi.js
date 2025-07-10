@@ -3,7 +3,9 @@
 } */
 
 export default function ApiUi() {
-  return `
+  const authData = JSON.parse(localStorage.getItem("auth_token"));
+  const userName = authData.user;  
+  return ` <h3 class="h3"> bienvenido ${userName}</h3>
     <div class="card shadow-sm border-0 rounded-4 mb-4">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-start">
