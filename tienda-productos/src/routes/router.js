@@ -4,32 +4,38 @@ import NotFound from "../views/notFound.js";
 import ApiUi from "../views/apiUi.js";
 import Home from "../views/home.js";
 import Login from "../views/login.js";
-import { isAutenticated } from "../js/auth.js";
+import {
+  isAutenticated,
+  updateAuthButtons,
+  validateGuardedPath,
+} from "../js/auth.js";
 import setupLogin from "../views/loginScript.js";
-
 
 // definicion de rutas disponibles en la aplicacion
 const routes = {
-  "/": {view: Home, guarded: false},
-  "/apiUi": {view: ApiUi, guarded:true},
-  "/about": {view: About, guarded: false},
-  "/login": {view: Login, guarded: false, script: setupLogin},
+  "/": { view: Home, guarded: validateGuardedPath("/") },
+  "/apiUi": { view: ApiUi, guarded: validateGuardedPath("/apiUi") },
+  "/about": { view: About, guarded: validateGuardedPath("/about") },
+  "/login": {
+    view: Login,
+    guarded: validateGuardedPath("/login"),
+    script: setupLogin,
+  },
 };
 
 export function router() {
   const path = window.location.pathname;
-  const route = routes[path] || {view: NotFound, guarded: false};
+  const route = routes[path] || { view: NotFound, guarded: false };
+  updateAuthButtons();
 
-  if(route.guarded && !isAutenticated()){
-    history.pushState(null,null,"/login");
+  if (route.guarded && !isAutenticated()) {
+    history.pushState(null, null, "/login");
     return router();
   }
 
+  document.getElementById("app").innerHTML = route.view();
 
-  document.getElementById("app").innerHTML = route.view()
-
-  if(route.script){
+  if (route.script) {
     route.script();
   }
- 
 }

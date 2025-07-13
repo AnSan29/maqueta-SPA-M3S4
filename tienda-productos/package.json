@@ -12,6 +12,7 @@
     "vite": "^7.0.3"
   },
   "dependencies": {
-    "crypto-browserify": "^3.12.1"
+    "crypto-browserify": "^3.12.1",
+    "crypto-js": "^4.2.0"
   }
 }
